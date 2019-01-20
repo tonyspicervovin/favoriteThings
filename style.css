@@ -16,7 +16,7 @@ body{
 }
 img{
     position: -ms-page;
-    border: red 5px dotted;
+    border: yellow 5px dotted;
 }
 #favorite_band{
     background-color: purple;
@@ -29,7 +29,18 @@ img{
 .important{
     color: red;
 }
-.favorite{
+.favorite-section{
     border: 5px deeppink solid;
     margin: 5px;
+}
+#most-favorite-food{
+    background-color: blue;
+    color: pink;
+}
+table{
+    text-align: left;
+}
+.big-image{
+    height: 100px;
+    width: 100px;
 }
