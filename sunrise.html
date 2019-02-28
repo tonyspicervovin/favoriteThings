@@ -1,0 +1,41 @@
+<!DOCTYPE html> 
+<html>
+    <head>
+
+    </head>
+
+    <body>
+        <h1>Sunrise and Sunset Times</h1>
+        <p   id = "sunrise"></p>
+        <p id = "sunset"></p>
+        <script>
+
+            if (navigator.geolocation){
+                navigator.geolocation.getCurrentPosition(function(position){
+                    console.log(position)
+                    getSunTimes(position)
+                })
+            }else{
+                console.log('No location available')
+            }
+            function getSunTimes(position){
+                let lat = position.coords.latitude
+                let lng = position.coords.longitude
+            let url = `https://api.sunrise-sunset.org/json?lat=${lat}&lng=${lng}`
+            fetch(url).then(  (res) => {
+                return res.json()
+        }).then(  (json) => {
+                console.log(json)
+                let sunriseE = document.querySelector('#sunrise')
+                let sunsetE = document.querySelector('#sunset')
+                let sunriseTime = json.results.sunrise
+                sunriseE.innerHTML = sunriseTime
+                let sunsetTime = json.results.sunset
+                sunsetE.innerHTML = sunsetTime
+        }).catch(  (err)=>(
+            console.log(err)
+        ))
+    }
+        </script>
+    </body>
+</html>

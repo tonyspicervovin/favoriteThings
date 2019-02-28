@@ -1,0 +1,8 @@
+#mctc-map {
+    width: 500px;
+    height: 600px;
+}
+.leaflet-container {
+    overflow: visible;
+}
+/* added this in , before I couldn't see my map */

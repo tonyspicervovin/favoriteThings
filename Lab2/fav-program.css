@@ -1,0 +1,29 @@
+.jumbotron{
+    font-family: 'Major Mono Display', monospace;
+    font-size: 200pc;
+    background-color: lightblue;
+}
+h2{
+    color: #613A41;
+}
+*{
+    text-align: center;
+    background-color: lightblue;
+}
+pre code {
+    background: #f4f4f4;
+    color: rgb(22, 32, 21);
+    font-family: monospace;
+    font-size: 15px;
+    background-color: azure;
+   
+}
+img{
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 400px; 
+}
+.github-link{
+    border: 4pt green solid;
+}

@@ -1,0 +1,18 @@
+<!DOCTYPE <!DOCTYPE html>
+<html>
+<head>
+    <title>Hello TImeout</title>
+</head>
+<body>
+    <h1> What Time is it</h1>
+    <p id = "time"></p>
+
+    <script>
+        let timeElement = document.querySelector('#time')
+        setInterval(function(){
+            let date = Date()
+            timeElement.innerHTML = date
+        },1000)
+    </script>
+</body>
+</html>

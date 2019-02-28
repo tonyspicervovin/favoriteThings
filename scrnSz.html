@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<h1>How many visible pixels?</h1>
+<p id="width"></p>
+<p id = "height"></p>
+<p id = "pixels"></p>
+
+<script>
+  var width_para = document.querySelector("#width");
+  var width_of_window = window.innerWidth;
+  width_para.innerHTML = "Width = " + width_of_window;
+  
+  var height_para = document.querySelector("#height");
+  var height_of_window = window.innerHeight;
+  height_para.innerHTML = "Height = " + height_of_window;
+
+  var pixel_size = document.querySelector("#pixels")
+  var pixels = height_of_window * width_of_window;
+  pixel_size.innerHTML = "Visible pixels = "+pixels;
+  
+  window.addEventListener("resize", windowWasResized);
+  function windowWasResized() {
+    alert("You re-sized the window!");
+    // In Chrome, you actually get two events when the window is re-sized,
+    // so you'll see two alerts. This shouldn't affect the lab question.
+    width_para = document.getElementById("width");
+    width_of_window = window.innerWidth;
+    width_para.innerHTML = "Width = " + width_of_window;
+    
+    height_para = document.getElementById("height");
+    height_of_window = window.innerHeight;
+    height_para.innerHTML = "Height = "+ height_of_window;
+
+    var pixel_size = document.querySelector("#pixels")
+    var pixels = height_of_window * width_of_window;
+    pixel_size.innerHTML = "Visible pixels = "+pixels;
+
+    
+  }
+</script>
+
+</body>
+
+</html>

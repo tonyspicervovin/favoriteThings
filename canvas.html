@@ -1,0 +1,33 @@
+<!DOCTYPE <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <style>
+        #canvas {
+            border: 1px black solid;
+        }
+    </style>
+</head>
+<body>
+    <canvas id = "canvas" height = "200"  width = "300" ></canvas>
+
+    <script>
+        var canvas = document.getElementById("canvas");
+        var context = canvas.getContext("2d");
+        context.fillRect(20 , 20 , 100 , 100);
+        context.strokeRect(150 , 20 , 100 , 100);
+        var c_h = document.getElementById("canvas");
+        var ctx_h = c_h.getContext("2d");
+
+        var gradient_h = ctx_h.createLinearGradient(0,0,300,0);
+
+        gradient_h.addColorStop(0,"orange");
+        gradient_h.addColorStop(0.5,"blue")
+        gradient_h.addColorStop(1,"purple")
+
+        ctx_h.fillStyle = gradient_h;
+
+        ctx_h.fillRect(0,0,300,300);
+    </script>
+</body>
+</html>

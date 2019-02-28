@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<body>
+<input type = "text" id = "input">
+<button id = "add"> Add items to the list</button>
+<button id = "clear">Clear</button>
+<h1> A list of items</h1>
+
+
+<ul id = "my-list">
+
+</ul>
+
+<script>
+    let newItemNumber = 1
+    let userInput = ""
+    document.querySelector('#add').addEventListener('click',function(){
+        
+        let my_list_element = document.querySelector("#my-list")
+
+        var new_list_item = document.createElement("li")
+
+        let input = document.querySelector("#input").value
+        if(input.length > 50){
+            alert('Input must be less than 50 characters')
+            return;
+        }
+        if (input.length == 0){
+            return;
+        }
+
+        new_list_item.innerHTML = `${input}`
+
+        my_list_element.appendChild(new_list_item);
+
+        document.getElementById("input").value=''
+
+        newItemNumber++
+        
+    })
+
+    document.querySelector('#clear').addEventListener('click',function(){
+        newItemNumber=1;
+        document.getElementById("my-list").innerHTML = "";
+        
+        
+    })
+</script>
+</body>

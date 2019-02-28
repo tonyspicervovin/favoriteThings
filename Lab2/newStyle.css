@@ -1,0 +1,16 @@
+h1{
+    color: firebrick;
+}
+#test-only{
+    margin: 5px;
+    border:5px orange solid;
+    color: green;
+font-size: 200%;    
+}
+#real-alert{
+    border: 5px deeppink solid;
+    color: red;
+}
+body{
+    background-color: tan;
+}

@@ -16,7 +16,8 @@ body{
 }
 img{
     position: -ms-page;
-    border: yellow 5px dotted;
+    border: yellow 5px dashed;
+    
 }
 #favorite_band{
     background-color: purple;

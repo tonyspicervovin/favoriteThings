@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JavsScript Functions with Arguments</title>
+
+  <style>
+      .tv-show {
+          color: green
+      }
+      .movie {
+          color: red;
+      }
+  </style>
+
+</head>
+<body>
+
+<!-- Starter page for Lab 3 -->
+
+<p>Enter a TV show (or movie) you like.</p>
+<label for="show-name"></label><input id="show-name">
+<input id="is-movie" type="checkbox"><label for="is-movie">Check this box if it is a movie?</label>
+<button id="save">Save to list</button>
+
+
+<ul id="list">
+
+</ul>
+
+<script>
+
+
+document.querySelector("#save").addEventListener('click', function () {
+        
+        var my_list_element = document.querySelector("#list")
+        var new_list_item = document.createElement("li")
+        // assigning list and creating a new list item
+        var isChecked = document.getElementById("is-movie").checked
+        //getting checked status of box
+        var name = document.querySelector("#show-name").value
+        //grabbing the entry and assigning it to a value
+        var list = document.getElementById('list').childNodes;
+        
+        var theArray = [];
+        for(var i=0;i < list.length; i++) {
+        var arrValue = list[i].innerHTML;
+        theArray.push(arrValue);
+}
+// I found this code that I used as a solution to creating an array from my list
+//https://stackoverflow.com/questions/2793688/how-do-i-put-unordered-list-items-into-an-array
+       
+        if (isChecked){
+            new_list_item.className = "movie"
+            //assigning class name to movie if is movie box is checked
+            console.log("movie")
+            //I left console logs to show my troubleshooting process 
+        }
+        else{
+            new_list_item.className = "tv-show"
+            //assigning class name to tv-show if movie box is not checked
+            console.log("tv show")
+        }
+        if (name.length == 0){
+            alert('Enter a show or movie')
+            //validating no entry
+            return;
+        }
+        new_list_item.innerHTML = `${name}`
+
+        
+
+        for ( var i = 0 ; i < theArray.length; i++ ){
+            console.log(name)
+            console.log(theArray[i])
+            if (name === theArray[i]){
+                alert('Already entered')
+                return;
+                // looping through my array of items in my list and 
+                // comparing them to the name entered, if the same 
+                // I show an alert and exit before it appends
+            }
+        }
+        document.getElementById("is-movie").checked = false;
+        
+        my_list_element.appendChild(new_list_item);
+
+        document.getElementById("show-name").value=''
+
+
+    })
+// Script goes here 
+/*
+This program is for creating a list of movies and TV shows.
+When the button is clicked, read the name of the TV show or movie from the input.
+And, find out if the is-movie input checkbox is checked.  
+You'll need to use the checked property, not the value property. https://www.w3schools.com/jsref/prop_checkbox_checked.asp 
+Create a new <li> element containing the name of the show/movie, the value of the text input
+If the show is a TV show (the checkbox is unchecked), add the class tv-show
+If the show is a movie, (the checkbox is checked) add the class movie
+You can set the .className property of an element to set its class, https://www.w3schools.com/jsref/prop_html_classname.asp
+Add the new li element to the list.
+Clear the input and un-check the checkbox.
+Notice that there is some CSS provided which applies one color to elements with 
+class movie, and a different color to tv-show. You may change the styles if you prefer.
+Finally, include some validation. Ignore any empty inputs.
+(Tricky part) And, show an alert message if the show/movie is already in the list. 
+Don't add the show/movie again.
+*/
+</script>
+
+</body>
+</html>

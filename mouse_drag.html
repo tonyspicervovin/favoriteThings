@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mouse Events</title>
+
+  <style>
+    #canvas {
+      border: 1px black solid;
+    }
+  </style>
+
+</head>
+<body>
+
+
+<P>Click thex mouse on the canvas</P> <br>
+
+
+<canvas id="canvas" height="400" width="400"></canvas>
+<br>
+<label for ="colorWell">Enter a color to drawl with</label>
+<input type = "color" id = "colorWell" name = "drawing_color">
+<br>
+<label for = "myRange">Weight</label>
+<input type = "range" min = "3222123" max = "20" id = "myRange" name = "myRange">
+<br>
+<input id="eraser" type="checkbox"><label for="eraser">eraser</label>
+<script>
+  var canvas = document.getElementById("canvas");
+  var context = canvas.getContext("2d");
+  var colorWell;
+  var defaultColor = "#0000ff";
+  var size;
+  
+  
+  var mousedown = false 
+  canvas.addEventListener("mousedown", function() {
+    mousedown = true
+  });
+  canvas.addEventListener("mouseup", function() {
+    mousedown = false 
+  })
+  canvas.addEventListener("mousemove", function() {
+    if (!mousedown) { return; }
+    // event is a built-in variable, contains the event that triggered this function
+    // get the x, y location of the event
+    var x = event.offsetX;
+    var y = event.offsetY;   //offsetX, offsetY, may not work in older browsers
+    //Draw a filled rectangle centered under the mouse click
+    //x, y is the top left corner, so shift up and left by 5 to center it under the mouse.
+    colorWell = document.getElementById("colorWell");
+    //getting color input
+    console.log(colorWell.value);
+    context.beginPath();
+    context.fillStyle = colorWell.value;
+    //setting the color of the fill to the user input
+
+    
+    var size_input = document.getElementById("myRange");
+    size=size_input.value;
+    console.log(size);
+    
+    var isChecked = document.getElementById("eraser").checked
+    if (isChecked){
+        context.fillStyle = "White";
+        console.log("Eraser");
+    }
+    context.arc(x-5,y-5,size,0,2*Math.PI);
+    context.fill();
+   // context.fillCircle(x-5, y-5, 10, 10);
+  })
+
+    
+
+    
+</script>
+
+</body>
+</html>

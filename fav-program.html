@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+<link rel = "stylesheet" type ="text/css" href="fav-program.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+</head>
+ 
+<body>
+    <form>
+        <div class = "jumbotron">
+            <h1>Media Manager</h1>
+        </div>
+        <h2>My favorite program to date</h2>
+        <h3>What is it?</h3>
+        <p>This is a program that I created for media collectors for organizing and cataloging their media
+          <ul>
+            <li>It allows you to add media with characteristics description, price paid, media type and condition</li>
+            <li>It stores your media in a database and uses that database to display a table</li>
+            <li>It allows you to edit within the table as well as delete the selected media</li> 
+            <li>has query options such as a search function and show all of a certain type</li>
+          </ul>
+        </p> 
+        <h3>Some Code Snippets</h3>
+        <p>
+<pre><code>String prepStatInsertSQL ="INSERT INTO media (name, condition, description, media, price) VALUES ( ? , ? , ? , ? , ? )";</code></pre>
+          <pre><code>
+Vector columns = callit.getColumns();
+String searchText = searchbyName.getText();
+Vector Vector data;
+data = callit.searchName(searchText);</code></pre>
+          <pre><code>
+int rowSelected = mediaTable.getSelectedRow();
+int id = idCounter.get(rowSelected);
+callit.delete(id);
+showIt();</code></pre>
+        </p>
+        <div class = "github-link">
+        <h3>Documentation</h3>
+        <p> <a href = "https://github.com/tonyspicervovin/mediaManager">https://github.com/tonyspicervovin/mediaManager </a></p>
+        </div>
+        <div class = "photo">
+        <p><img src = "media.png" alt = "media-manager" title = "media manager">
+            <img src = "media1.png" alt = "media-manager" title = "search function"> 
+            <img src = "media 2.png" alt = "media-manager" title = "editing too!">  
+        </p>
+        </div>
+        
+    </form>
+</body>
+
+</html>

@@ -1,0 +1,17 @@
+h1 {
+    color: #5D281D;
+}
+.jumbotron{
+    background-color: #CECA76;
+    font-family: 'Major Mono Display', monospace;
+}
+.form-check{
+    color: olive;
+}
+.form-control{
+    border: 4pt black solid;
+}
+body {
+    font-family: 'Oswald', sans-serif;
+    background-color: #9DA288;
+}
